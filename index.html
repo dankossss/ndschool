@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0PXTPDBVS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W0PXTPDBVS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDsh School Приватна школа у Вінниці — Початкова школа та гуртки</title>
+    <meta name="description"
+        content="NDsh School — сучасна приватна школа. Навчання, розвиток та творчість для вашої дитини. Запишіться на консультацію!">
+    <meta name="keywords" content="English, NDsh School, ND School, Англійська, школа Вінниця, NDschool, дошколярик, початкова школа, дитячий розвиток">
+
+    <meta property="og:title" content="Приватна школа NDsh School">
+    <meta property="og:description" content="Найкращий простір для навчання вашої дитини.">
+    <meta property="og:image" content="preview.png">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <link rel="icon" type="image/png" href="icon.png">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="logo.svg" alt="ND School Logo" class="round-logo">
+            </div>
+            <nav>
+                <a href="#hero">Про нас</a>
+                <a href="#services">Послуги</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#contacts">Контакти</a>
+            </nav>
+            <div class="header-contacts">
+                <a href="tel:+380980829099" class="phone-link">+380 98 082 90 99</a>
+                <div class="messenger-icons">
+                    <a href="https://www.instagram.com/ndshschool" target="_blank" class="ga-messenger"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://t.me/NDshschool" target="_blank" class="ga-messenger" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="viber://chat?number=%2B380980829099" target="_blank" class="ga-messenger" title="Viber">
+                        <i class="fab fa-viber"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Дошколярик & English Kids</h1>
+            <p>Впевнений старт у майбутнє. Ми готуємо дітей до школи з любов'ю та знаннями.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Наші напрямки</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Англійська мова</h3>
+                    <p>Ігрова методика, пісні та розмовна практика для найменших.</p>
+                </div>
+                <div class="card">
+                    <h3>Підготовка до школи</h3>
+                    <p>Читання, письмо, логіка та математика в дружній атмосфері.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Наше життя</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active"><img src="001.jpg" alt="Фото 1"></div>
+                    <div class="slide active"><img src="002.jpg" alt="Фото 2"></div>
+                    <div class="slide active"><img src="003.jpg" alt="Фото 3"></div>
+                    <div class="slide active"><img src="004.jpg" alt="Фото 4"></div>
+                    <div class="slide active"><img src="005.jpg" alt="Фото 5"></div>
+                    <div class="slide active"><img src="006.jpg" alt="Фото 6"></div>
+                </div>
+
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                <div class="dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            // Перевірка на вихід за межі (циклічність)
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            // Ховаємо всі слайди
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("active"); // Видаляємо клас активності
+            }
+
+            // Прибираємо активність з усіх точок
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // Показуємо потрібний слайд (використовуємо slideIndex - 1, бо масиви починаються з 0)
+            if (slides[slideIndex - 1]) {
+                slides[slideIndex - 1].style.display = "block";
+                slides[slideIndex - 1].classList.add("active");
+            }
+
+            if (dots[slideIndex - 1]) {
+                dots[slideIndex - 1].className += " active";
+            }
+        }
+    </script>
+
+    <footer id="contacts">
+        <div class="container footer-grid">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d948.5292657633453!2d28.502846934962168!3d49.210603414858234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d5b005f47f0e1%3A0x31dd1e0e21fe353d!2z0J3QsNCy0YfQsNC70YzQvdC40Lkg0LrQsNCx0ZbQvdC10YIgwqtORHNoIFNjaG9vbOKAnQ!5e0!3m2!1suk!2sua!4v1770647549220!5m2!1suk!2sua" " width="
+                    100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p class="address">📍 Площа Шкільна, 1, Vinnytsia 21012</p>
+            </div>
+
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#services">Наші послуги</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="https://www.instagram.com/ndshschool" target="_blank">Новини в Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <h3>Графік роботи</h3>
+                <p>Пн – Чт: 08:00 – 19:00</p>
+                <p>Пт – Нд: індивідуально</p>
+
+                <div class="contact-links">
+                    <h3>Зв'язок</h3>
+                    <p>
+                        <a href="tel:+380980829099" class="ga-messenger">
+                            <i class="fas fa-phone-alt"></i> +380 98 082 90 99
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/ndshschool" target="_blank" class="ga-messenger" title="Instagram">
+                            <i class="fab fa-instagram"></i> @ndshschool
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messengerLinks = document.querySelectorAll('.ga-messenger');
+
+            messengerLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Визначаємо назву месенджера за атрибутом title
+                    const platform = this.getAttribute('title');
+                    // Надсилаємо подію в GA4
+                    gtag('event', 'messenger_click_ndschool', {
+                        'platform': platform, // Буде Instagram, Telegram або Viber
+                        'link_url': this.href
+                    });
+                    // Лог для перевірки в консолі розробника (F12)
+                    console.log('Аналітика: Клік по ' + platform);
+                });
+            });
+            // 2. Відстеження кліків по номеру телефону
+            const phoneLink = document.querySelector('.phone-link');
+            if (phoneLink) {
+                phoneLink.addEventListener('click', function () {
+                    gtag('event', 'call_click_ndschool', {
+                        'phone_number': this.href,
+                        'location': 'header'
+                    });
+                    console.log('Аналітика: Клік по номеру телефону');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
